@@ -1,8 +1,9 @@
 const mongoose = require("mongoose")
+require('dotenv').config();
 
 const connectDB = async () => {
   await mongoose.connect(
-    "mongodb+srv://anushikhadas260:7HCZgBO2rzFhDVgv@cluster0.zzmq1.mongodb.net/codehike"
+    process.env.DATABASE_CONNECTION
   );
 };
 

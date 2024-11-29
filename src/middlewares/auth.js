@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user")
+require('dotenv').config();
 
 const userAuth = async (req, res, next)=>{
    try{
@@ -8,7 +9,7 @@ const userAuth = async (req, res, next)=>{
       if(!token){
         throw new Error("Invalid token.");
       }
-      const decodedObj = await jwt.verify(token, "Oreo@Hike$1209");
+      const decodedObj = await jwt.verify(token, process.env.SECRET_HASH);
 
       const {_id} = decodedObj;
 
