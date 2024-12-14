@@ -5,7 +5,7 @@ const ConnectionRequest = require("../models/connectionRequest");
 
 const userRouter = express.Router();
 
-const USER_PUBLIC_DATA = ["firstName", "lastName", "photo", "about","gender", "age"];
+const USER_PUBLIC_DATA = ["firstName", "lastName", "photo", "about","gender", "age", "skills"];
 
 userRouter.get("/user/requests/received", userAuth, async (req, res) =>{
   try {
